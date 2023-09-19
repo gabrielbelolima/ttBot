@@ -1,24 +1,23 @@
 name: runs-ttbot
 on:
   schedule:
-    -cron: '0 4 * * *'
+  - cron: '0 4 * * *'
 jobs:
   build:
-      runs-on: ubunto-latest
-    
-        steps:
-          
-          -name: sets up python
+      runs-on: ubunto-latest 
+      
+      steps:
+        - name: sets up python
           uses: action/setup-python@v4
           with:
             python-version: '3.8'
           
-          -name: installing stuff
+        - name: installing stuff
           run:
             python -m pip install --upgrade pip
             pip install -r requirements.txt
             
-          -name: executing python script
+        - name: executing python script
           env:
             ACCESS_TOKEN: ${{ secrets.DQD_ACCESS_TOKEN }}
             ACCESS_TOKEN_SECRET: ${{ secrets.DQD_ACCESS_TOKEN_SECRET }}
