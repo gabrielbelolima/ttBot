@@ -5,44 +5,22 @@
 
 # ## Importing libs
 
-# In[9]:
-
-
 import os
 import requests
-import lxml.html
 import tweepy
-import json
-import itertools
 from datetime import datetime as dt
-from bs4 import BeautifulSoup
-
-
-# In[6]:
-
-
-import diadequedia_key as dqd
-
 
 # ## Auth
 
-# In[14]:
-
-
 tt = tweepy.Client(
     #Consumer Keys
-    consumer_key=dqd.secret['consumer_key'],
-    consumer_secret=dqd.secret['consumer_secret'],
+    consumer_key= os.environ['consumer_key'],
+    consumer_secret= os.environ['consumer_secret'],
     # Access Token and Secret
-    access_token=dqd.secret['access_token'],
-    access_token_secret=dqd.secret['access_token_secret'])
-print(tt)
-
+    access_token= os.environ['access_token'],
+    access_token_secret= os.environ['access_token_secret'])
 
 # ## Defining Functions
-
-# In[10]:
-
 
 now = dt.now()
 
@@ -197,4 +175,3 @@ def post_date():
     r = tt.create_tweet(text=text)
     print(r)
     return
-
