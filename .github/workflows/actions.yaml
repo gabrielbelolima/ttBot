@@ -4,7 +4,7 @@ on:
   - cron: '* * * * *'
 jobs:
   build:
-    runs-on: ubunto-latest
+    runs-on: windows-latest
     steps:
       - name: sets up python
         uses: action/setup-python@v4
