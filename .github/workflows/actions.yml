@@ -7,9 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: sets up python
-        uses: action/setup-python@v4
+      - uses: actions/checkout@v3
+      - uses: action/setup-python@v4
         with:
-            python-version: '3.8'
+            python-version: '3.9'
           
       - name: installing stuff
         run:
