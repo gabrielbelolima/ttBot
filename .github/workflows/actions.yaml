@@ -1,7 +1,7 @@
 name: runs-ttbot
 on:
   schedule:
-  - cron: '0 4 * * *'
+  - cron: '* * * * *'
 jobs:
   build:
     runs-on: ubunto-latest
