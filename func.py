@@ -162,6 +162,8 @@ def format_post():
     if len(ttt_aux) > 1:
         txt = txt.replace(',{}'.format(txt.split(',')[-1]),
                           ' e{}'.format(txt.split(',')[-1]))
+    # - Substitui texto específico
+    txt = txt.replace('Dia do Deficiente Físico','Dia da Pessoa com Deficência Física')
 
     if txt == '':
         return 'Hoje não temos datas comemorativas! 😥'
