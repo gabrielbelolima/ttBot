@@ -128,12 +128,23 @@ def create_grid(year=None, month=None, full_grid=False):
         except:
             day = 0
 
+
+
         try:
             content_xpath = '/html/body/section/div/div/table/tbody/tr[{0}]/td[{1}]/ul/li[{2}]/span'.format(
                 a, b, c)
             content = html_tree.xpath(content_xpath)[0].text_content()
         except:
             content = None
+
+        # Verifica se é um feriado!
+        if content == None:
+            try:
+                content_xpath = '/html/body/section/div/div/table/tbody/tr[{0}]/td[{1}]/ul/li[{2}]/a'.format(
+                a, b, c)
+                content = html_tree.xpath(content_xpath)[0].text_content()
+            except:
+                content = None           
 
         date_list.append([year, month_n, int(day), content, str(xpath_ref)])
 
@@ -142,7 +153,6 @@ def create_grid(year=None, month=None, full_grid=False):
                          ]  # Filters grid: content != None. See *** bellow
 
     return date_list
-
 
 #- todays_tt()
 def todays_tt():
