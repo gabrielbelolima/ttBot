@@ -23,6 +23,7 @@ tt = tweepy.Client(
 # ## Defining Functions
 
 now = dt.now()
+#now = dt(year=2023, month = 11, day = 15) #Data de teste! Remover!
 
 #- get_date()
 def get_date(year=None, month=None, day=None, now=now, as_str=True):
@@ -143,6 +144,8 @@ def create_grid(year=None, month=None, full_grid=False):
                 content_xpath = '/html/body/section/div/div/table/tbody/tr[{0}]/td[{1}]/ul/li[{2}]/a'.format(
                 a, b, c)
                 content = html_tree.xpath(content_xpath)[0].text_content()
+                feriado_str = 'feriado!⭐ '
+                content = feriado_str+content
             except:
                 content = None           
 
@@ -153,6 +156,7 @@ def create_grid(year=None, month=None, full_grid=False):
                          ]  # Filters grid: content != None. See *** bellow
 
     return date_list
+
 
 #- todays_tt()
 def todays_tt():
