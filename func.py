@@ -23,7 +23,6 @@ tt = tweepy.Client(
 # ## Defining Functions
 
 now = dt.now()
-#now = dt(year=2023, month = 11, day = 15) #Data de teste! Remover!
 
 #- get_date()
 def get_date(year=None, month=None, day=None, now=now, as_str=True):
