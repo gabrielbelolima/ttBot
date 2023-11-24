@@ -266,9 +266,9 @@ def format_post():
     txt = txt.replace('Dia do Deficiente Físico','Dia da Pessoa com Deficência Física')
 
     if txt == '':
-        return str_feriados + '\nHoje não temos datas comemorativas! 😥 '
+        return '\nHoje não temos datas comemorativas! 😥 ' + str_feriados
     else:
-        return str_feriados + '\n\nHoje é {}.'.format(txt)
+        return '\n\nHoje é {}.'.format(txt) + str_feriados
 
 
 #- post_date()
