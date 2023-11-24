@@ -274,6 +274,7 @@ def format_post():
 #- post_date()
 def post_date():
     text = format_post()
+    print(text)
     r = tt.create_tweet(text=text)
     print(r)
     return
