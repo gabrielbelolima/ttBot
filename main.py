@@ -3,9 +3,7 @@
 
 from func import * 
 
-if __name__ == "__main__":   
-   try:
-       post_date()
-    except:
-        print('Erro na main!')
+if __name__ == "__main__":
+   post_date()
+
     
