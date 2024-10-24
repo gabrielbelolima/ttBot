@@ -3,11 +3,16 @@
 
 from func import * 
 
+a = os.environ['CONSUMER_KEY']
+b = os.environ['CONSUMER_SECRET']
+c = os.environ['ACCESS_TOKEN']
+d = os.environ['ACCESS_TOKEN_SECRET']
+
 print(
-os.environ['CONSUMER_KEY'],
-os.environ['CONSUMER_SECRET'],
-os.environ['ACCESS_TOKEN'],
-os.environ['ACCESS_TOKEN_SECRET'],
+str(a), 
+str(b), 
+str(c), 
+str(d), 
 sep = '\n' 
 )
 
