@@ -239,7 +239,7 @@ def get_content_feriado(year = None, now = now):
             ]))
 
     str_dt_feriado = feriado.strftime(f'%d de {dt_month[feriado.month]} de %Y')
-    str_content_feriado = f"\nFaltam {next_holiday_in_days} dias para o próximo feriado: O {content}, em {str_dt_feriado}!"
+    str_content_feriado = f"\nFaltam {next_holiday_in_days} dias para o próximo feriado: O {content}!"
     extra_feriado = "\nE se prepara pro feriadão que o {} cai numa {}!🌞😎".format(content, wd)
 
     if wd in ["Segunda-feira","Sexta-feira"]:
@@ -265,7 +265,8 @@ def format_post():
     # - Substitui texto específico
     txt = txt.replace('Dia do Deficiente Físico','Dia da Pessoa com Deficência Física')
     txt = txt.replace('Dia do índio','Dia dos Povos indígenas')
-
+    txt = txt.replace('Hoje é Dia ','Hoje é dia ')
+    txt = txt.replace(' Dia ',' ')
     if txt == '':
         return '\nHoje não temos datas comemorativas! 😥 ' + str_feriados
     else:
