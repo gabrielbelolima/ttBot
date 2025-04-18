@@ -264,7 +264,8 @@ def format_post():
     
     # - Substitui texto específico
     txt = txt.replace('Dia do Deficiente Físico','Dia da Pessoa com Deficência Física')
-    txt = txt.replace('Dia do índio','Dia dos Povos indígenas')
+    txt = txt.replace('do índio','dos Povos indígenas')
+    txt = txt.replace('dos índios','dos Povos indígenas')
     txt = txt.replace(' Dia ',' ')
     txt = txt.replace('Hoje é ','Hoje é dia ')
     
