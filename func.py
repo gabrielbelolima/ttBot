@@ -128,8 +128,7 @@ def create_grid(year=None, month=None, full_grid=False):
         except:
             day = 0
 
-
-
+        
         try:
             content_xpath = '/html/body/section/div/div/table/tbody/tr[{0}]/td[{1}]/ul/li[{2}]/span'.format(
                 a, b, c)
